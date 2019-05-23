@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isOpen: false,
+      btn: 'button',
+      text: 'Hello Artem =*'
+    }
+  }
+
+  stateText = () => {
+    const isOpen = this.state.isOpen
+    this.setState({
+      isOpen: !isOpen
+    })
+  }
+
+  render() {
+    const { isOpen } = this.state
+    const { btn } = this.state
+    const { text } = this.state
+
+    return (
+      <div className="App">
+        <button className="btn" onClick={this.stateText}>{btn}</button>
+        {
+          isOpen && (
+            <p toggle="foo">{text}</p>
+          )
+        }
+      </div >
+    );
+  }
 }
 
 export default App;
