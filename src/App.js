@@ -5,13 +5,11 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isOpen: false,
-      btn: 'button',
-      text: 'Hello Artem =*'
+      isOpen: false
     }
   }
 
-  stateText = () => {
+  handleButtonClick = () => {
     const isOpen = this.state.isOpen
     this.setState({
       isOpen: !isOpen
@@ -20,15 +18,13 @@ class App extends React.Component {
 
   render() {
     const { isOpen } = this.state
-    const { btn } = this.state
-    const { text } = this.state
 
     return (
       <div className="App">
-        <button className="btn" onClick={this.stateText}>{btn}</button>
+        <button className="btn" onClick={this.handleButtonClick}>button</button>
         {
           isOpen && (
-            <p toggle="foo">{text}</p>
+            <p>Hello Artem =*</p>
           )
         }
       </div >
