@@ -17,12 +17,6 @@ class Input extends React.Component {
         })
     }
 
-    handleKeyPress = (event) => {
-        if (event.key === 'Enter') {
-            this.takeData()
-        }
-    }
-
     uniqueNumber = () => (
         Math.random().toString(36).substring(2)
         + (new Date()).getTime().toString(36)
@@ -54,8 +48,9 @@ class Input extends React.Component {
             <div>
                 <input type="text" name="input" placeholder="text" value={inputValue} onChange={this.handleAddTask} onKeyPress={this.handleKeyPress} />
                 {tasks.map((task) => (
-                    <p key={task.id} id={task.id}></p>
-                ))}
+                    <p key={task.id} id={task.id} >{task.name}</p>
+                ))
+                }
             </div>
         )
     }
