@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input } from './Input.js'
 import './App.css';
 
 class App extends React.Component {
@@ -27,6 +28,7 @@ class App extends React.Component {
             <p>Hello Artem =*</p>
           )
         }
+        <Input />
       </div >
     );
   }
