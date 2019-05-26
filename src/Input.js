@@ -36,7 +36,6 @@ class Input extends React.Component {
 
     handleKeyPress = (event) => {
         if (event.key === 'Enter') {
-            console.log('okay')
             this.takeData()
         }
     }
@@ -48,7 +47,7 @@ class Input extends React.Component {
             <div>
                 <input type="text" name="input" placeholder="text" value={inputValue} onChange={this.handleAddTask} onKeyPress={this.handleKeyPress} />
                 {tasks.map((task) => (
-                    <p key={task.id} id={task.id} >{task.name}</p>
+                    <p key={task.id} >{task.name}</p>
                 ))
                 }
             </div>
