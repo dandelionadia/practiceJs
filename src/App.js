@@ -1,6 +1,16 @@
 import React from 'react';
 import { Input } from './Input.js'
+import { Autosuggestion } from './Autosuggestion.js'
 import './App.css';
+
+const data = [
+  {
+    name: 'test'
+  },
+  {
+    name: 'box'
+  }
+]
 
 class App extends React.Component {
   constructor(props) {
@@ -29,6 +39,7 @@ class App extends React.Component {
           )
         }
         <Input />
+        <Autosuggestion suggestions={data} />
       </div >
     );
   }

@@ -45,7 +45,14 @@ class Input extends React.Component {
 
         return (
             <div>
-                <input type="text" name="input" placeholder="text" value={inputValue} onChange={this.handleAddTask} onKeyPress={this.handleKeyPress} />
+                <input
+                    type="text"
+                    name="input"
+                    placeholder="text"
+                    value={inputValue}
+                    onChange={this.handleAddTask}
+                    onKeyPress={this.handleKeyPress}
+                />
                 {tasks.map((task) => (
                     <p key={task.id} >{task.name}</p>
                 ))
